@@ -12,7 +12,7 @@ var MongoStore = require('connect-mongo')(session);
 
 var port = 8080;
 
-var dburl = "DB URL";
+var dburl = "mongodb://dev-user:devuser123@ds029224.mlab.com:29224/angular-mk-store";
 
 // Express Session Setup
 var opt = {
