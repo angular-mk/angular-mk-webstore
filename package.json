@@ -4,7 +4,8 @@
   "description": "Angular-mk webstore.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sudo node app.js & node redirect.js"
   },
   "author": "Henry Jiang, Colin Cai, Yoshi Inoue",
   "license": "ISC",

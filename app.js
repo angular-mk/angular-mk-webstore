@@ -10,7 +10,11 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var MongoStore = require('connect-mongo')(session);
 
-var port = 8080;
+const http = require('http');
+
+// Get port
+const port = process.argv[2] || 3000;
+const hostname = "0.0.0.0";
 
 var dburl = "mongodb://dev-user:devuser123@ds029224.mlab.com:29224/angular-mk-store";
 
@@ -56,6 +60,7 @@ mongoose.connect(dburl, function(){
 
 // Homepage
 app.use(express.static(__dirname + '/public'));
+
 app.engine('html', require('ejs').renderFile);
 app.set('views', __dirname + '/public');
 app.set('view engine', 'ejs');
@@ -65,14 +70,20 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/', function(req, res) {
-  res.send("Hello World.");
+  res.sendFiles("./public/index.html");
 });
+
+// API routes
+var apiRoutes = require("./routes/API.js");
+app.use('/api', apiRoutes);
 
 // 404 Error Handling
 app.get('*', function(req, res) {
   res.sendStatus(404);
 });
 
-app.listen(port, function() {
-  console.log('Server started on port: ' + port);
+// HTTP Server Setup
+var server = http.createServer(app);
+server.listen(port, hostname, function() {
+  console.log("Application running on port " + port);
 });
