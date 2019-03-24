@@ -77,6 +77,11 @@ app.use(express.static(__dirname + '/public'));
 var apiRoutes = require("./routes/API.js");
 app.use('/api', apiRoutes);
 
+//Paypal API routes
+var paypal = require("./routes/paypal.js");
+app.use('/payment-api', paypal);
+
+
 // 404 Error Handling
 app.get('*', function(req, res) {
   res.sendStatus(404);
