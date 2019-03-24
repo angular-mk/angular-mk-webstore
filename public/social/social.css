@@ -11,6 +11,7 @@
 }
 
 .ic-logo {
+  display: block;
   position: relative;
   left: -1px;
   top: 2px;

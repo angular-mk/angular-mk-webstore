@@ -67,7 +67,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get("/", function(req, res) {
-  res.render('index');
+    res.render('index');
 });
 
 // Homepage
@@ -81,6 +81,9 @@ app.use('/api', apiRoutes);
 var paypal = require("./routes/paypal.js");
 app.use('/payment-api', paypal);
 
+// Products Page
+var products = require('./routes/products.js');
+app.use('/products', products);
 
 // 404 Error Handling
 app.get('*', function(req, res) {

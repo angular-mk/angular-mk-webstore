@@ -34,7 +34,7 @@ router.get('/cancel', function(req, res) {
 });
 
 router.get('/test-site', function(req, res) {
-  
+  res.render('payment.ejs');
 });
 
 router.post('/test-site', function(req, res) {
@@ -51,8 +51,8 @@ router.post('/test-site', function(req, res) {
     },
     transactions:[{
       amount:{
-        total:'10',
-        currency:'USD'
+        total:'0.01',
+        currency:'CAD'
       },
       description:'This is the payment transaction description.'
     }]
