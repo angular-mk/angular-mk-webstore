@@ -1,0 +1,42 @@
+.social-media {
+  position: fixed;
+  width: 60px;
+  height: 150px;
+  z-index: 9999;
+  background-color: #333;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  top: calc(50vh - 75px);
+  padding: 1px;
+}
+
+.ic-logo {
+  position: relative;
+  left: -1px;
+  top: 2px;
+}
+
+.ic-logo i {
+  background-color: #fff;
+}
+
+.fa-instagram {
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 23px;
+}
+
+.fa-reddit {
+  padding: 7px;
+  border-radius: 23px;
+}
+
+.fa-discord {
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 23px;
+}

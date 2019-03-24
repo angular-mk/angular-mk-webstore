@@ -58,20 +58,20 @@ mongoose.connect(dburl, function(){
   console.log('Connected to Database');
 });
 
-// Homepage
-app.use(express.static(__dirname + '/public'));
-
 app.engine('html', require('ejs').renderFile);
-app.set('views', __dirname + '/public');
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.get('/', function(req, res) {
-  res.sendFiles("./public/index.html");
+app.get("/", function(req, res) {
+  res.render('index');
 });
+
+// Homepage
+app.use(express.static(__dirname + '/public'));
 
 // API routes
 var apiRoutes = require("./routes/API.js");
